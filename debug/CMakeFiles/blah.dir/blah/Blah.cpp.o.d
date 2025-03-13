@@ -1,5 +1,6 @@
-CMakeFiles/hello.dir/helloworld.cpp.o: \
- /home/uali/projects/helloworld/helloworld.cpp /usr/include/stdc-predef.h \
+CMakeFiles/blah.dir/blah/Blah.cpp.o: \
+ /home/uali/projects/helloworld/blah/Blah.cpp /usr/include/stdc-predef.h \
+ /home/uali/projects/helloworld/blah/include/Blah.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -148,5 +149,4 @@ CMakeFiles/hello.dir/helloworld.cpp.o: \
  /usr/include/c++/13/bits/locale_facets.tcc \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
- /usr/include/c++/13/bits/istream.tcc \
- /home/uali/projects/helloworld/blah/include/Blah.h
+ /usr/include/c++/13/bits/istream.tcc

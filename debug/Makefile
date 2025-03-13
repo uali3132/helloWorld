@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named blah
+
+# Build rule for target.
+blah: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 blah
+.PHONY : blah
+
+# fast build rule for target.
+blah/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blah.dir/build.make CMakeFiles/blah.dir/build
+.PHONY : blah/fast
+
+#=============================================================================
 # Target rules for targets named hello
 
 # Build rule for target.
@@ -128,6 +141,30 @@ hello: cmake_check_build_system
 hello/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/build
 .PHONY : hello/fast
+
+blah/Blah.o: blah/Blah.cpp.o
+.PHONY : blah/Blah.o
+
+# target to build an object file
+blah/Blah.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blah.dir/build.make CMakeFiles/blah.dir/blah/Blah.cpp.o
+.PHONY : blah/Blah.cpp.o
+
+blah/Blah.i: blah/Blah.cpp.i
+.PHONY : blah/Blah.i
+
+# target to preprocess a source file
+blah/Blah.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blah.dir/build.make CMakeFiles/blah.dir/blah/Blah.cpp.i
+.PHONY : blah/Blah.cpp.i
+
+blah/Blah.s: blah/Blah.cpp.s
+.PHONY : blah/Blah.s
+
+# target to generate assembly for a file
+blah/Blah.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blah.dir/build.make CMakeFiles/blah.dir/blah/Blah.cpp.s
+.PHONY : blah/Blah.cpp.s
 
 helloworld.o: helloworld.cpp.o
 .PHONY : helloworld.o
@@ -153,30 +190,6 @@ helloworld.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/helloworld.cpp.s
 .PHONY : helloworld.cpp.s
 
-src/Blah.o: src/Blah.cpp.o
-.PHONY : src/Blah.o
-
-# target to build an object file
-src/Blah.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/src/Blah.cpp.o
-.PHONY : src/Blah.cpp.o
-
-src/Blah.i: src/Blah.cpp.i
-.PHONY : src/Blah.i
-
-# target to preprocess a source file
-src/Blah.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/src/Blah.cpp.i
-.PHONY : src/Blah.cpp.i
-
-src/Blah.s: src/Blah.cpp.s
-.PHONY : src/Blah.s
-
-# target to generate assembly for a file
-src/Blah.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/src/Blah.cpp.s
-.PHONY : src/Blah.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -185,13 +198,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... blah"
 	@echo "... hello"
+	@echo "... blah/Blah.o"
+	@echo "... blah/Blah.i"
+	@echo "... blah/Blah.s"
 	@echo "... helloworld.o"
 	@echo "... helloworld.i"
 	@echo "... helloworld.s"
-	@echo "... src/Blah.o"
-	@echo "... src/Blah.i"
-	@echo "... src/Blah.s"
 .PHONY : help
 
 

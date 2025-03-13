@@ -63,6 +63,7 @@ CMAKE_BINARY_DIR = /home/uali/projects/helloworld/debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/blah.dir/all
 all: CMakeFiles/hello.dir/all
 .PHONY : all
 
@@ -71,22 +72,49 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/blah.dir/clean
 clean: CMakeFiles/hello.dir/clean
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/blah.dir
+
+# All Build rule for target.
+CMakeFiles/blah.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blah.dir/build.make CMakeFiles/blah.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blah.dir/build.make CMakeFiles/blah.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/uali/projects/helloworld/debug/CMakeFiles --progress-num=1,2 "Built target blah"
+.PHONY : CMakeFiles/blah.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/blah.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/uali/projects/helloworld/debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/blah.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/uali/projects/helloworld/debug/CMakeFiles 0
+.PHONY : CMakeFiles/blah.dir/rule
+
+# Convenience name for target.
+blah: CMakeFiles/blah.dir/rule
+.PHONY : blah
+
+# clean rule for target.
+CMakeFiles/blah.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blah.dir/build.make CMakeFiles/blah.dir/clean
+.PHONY : CMakeFiles/blah.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/hello.dir
 
 # All Build rule for target.
-CMakeFiles/hello.dir/all:
+CMakeFiles/hello.dir/all: CMakeFiles/blah.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/uali/projects/helloworld/debug/CMakeFiles --progress-num=1,2,3 "Built target hello"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/uali/projects/helloworld/debug/CMakeFiles --progress-num=3,4 "Built target hello"
 .PHONY : CMakeFiles/hello.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/hello.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/uali/projects/helloworld/debug/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/uali/projects/helloworld/debug/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/hello.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/uali/projects/helloworld/debug/CMakeFiles 0
 .PHONY : CMakeFiles/hello.dir/rule
